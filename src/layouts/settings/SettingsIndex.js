@@ -59,7 +59,6 @@ const SettingsIndex = () => {
                 <Card py={3}>
                     <SoftBox display="flex" justifyContent="space-between" alignItems="center" p={3}>
                         <SoftTypography variant="h4">Settings</SoftTypography>
-                        {/* <SoftButton onClick={updateSettnigsBtn}> Update </SoftButton> */}
                     </SoftBox>
                     <SoftBox
                         sx={{
@@ -86,54 +85,49 @@ const SettingsIndex = () => {
                         }
                         {
                             !isLoading &&
-                            <form>
+                            <>
 
-                                <label>
-                                    Commision Fee (%)
-                                    <SoftInput
-                                        placeholder={data?.payload.commission_fee}
-                                        onChange={(e) => setCommisionFee(e.target.value)}
-                                        // value={data?.data?.payload.commission_fee}
-                                        type='number'
-                                    />
-                                </label>
-                                <label>
-                                    Max Loan Amount
-                                    <SoftInput
-                                        placeholder={data?.payload.max_loan_amount}
-                                        type="number"
-                                        onChange={(e) => setMaxLoanAmount(e.target.value)}
-                                    // value={data?.data?.payload.max_loan_amount}
-                                    />
-                                </label>
-                                <label>
-                                    Max pledge amount
-                                    <SoftInput
-                                        placeholder={data?.payload.max_pledge_amount}
-                                        type="number"
-                                        onChange={(e) => setPledgeAmount(e.target.value)}
-                                    // value={data?.data?.payload.max_pledge_amount}
+                                <form style={{ marginBottom: '20px' }}>
 
-                                    />
-                                </label>
-                                <label>
-                                    Penalty fee (%)
-                                    <SoftInput
-                                        placeholder={data?.payload.penalty_fee}
-                                        type="number"
-                                        onChange={(e) => setPenaltyFee(e.target.value)}
-                                    // value={data?.data?.payload.penalty_fee}
-
-                                    />
-                                </label>
-                                <SoftButton color="success" onClick={handleSubmit}>Submit</SoftButton>
-                            </form>
+                                    <label>
+                                        Commision Fee (%)
+                                        <SoftInput
+                                            placeholder={data?.payload.commission_fee}
+                                            onChange={(e) => setCommisionFee(e.target.value)}
+                                            type='number'
+                                        />
+                                    </label>
+                                    <label>
+                                        Max Loan Amount
+                                        <SoftInput
+                                            placeholder={data?.payload.max_loan_amount}
+                                            type="number"
+                                            onChange={(e) => setMaxLoanAmount(e.target.value)}
+                                        />
+                                    </label>
+                                    <label>
+                                        Max pledge amount
+                                        <SoftInput
+                                            placeholder={data?.payload.max_pledge_amount}
+                                            type="number"
+                                            onChange={(e) => setPledgeAmount(e.target.value)}
+                                        />
+                                    </label>
+                                    <label >
+                                        Penalty fee (%)
+                                        <SoftInput
+                                            placeholder={data?.payload.penalty_fee}
+                                            type="number"
+                                            onChange={(e) => setPenaltyFee(e.target.value)}
+                                        />
+                                    </label>
+                                </form>
+                                <SoftButton color="secondary" onClick={handleSubmit}>Submit</SoftButton>
+                            </>
                         }
                     </SoftBox>
-
                 </Card>
             </SoftBox>
-            {/*<Footer />*/}
         </DashboardLayout>
     );
 };

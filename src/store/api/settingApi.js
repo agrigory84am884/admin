@@ -17,7 +17,6 @@ export const settingApi = createApi({
                 method: 'PUT',
                 body: { max_pledge_amount, max_loan_amount, penalty_fee, commission_fee, }
             }),
-            // invalidatesTags: ['LoanTypes']
         }),
     }),
 })
