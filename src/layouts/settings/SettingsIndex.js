@@ -27,31 +27,16 @@ const SettingsIndex = () => {
     const [maxLoanAmount, setMaxLoanAmount] = useState()
     const [pledgeAmount, setPledgeAmount] = useState()
     const [penaltyFee, setPenaltyFee] = useState()
-    const [inpValues, setInputValues] = useState({
-        commisionFee: commisionFee,
-        maxLoanAmount: maxLoanAmount,
-        pledgeAmount: pledgeAmount,
-        penaltyFee: penaltyFee,
-    })
-    // const { dataUpd, isErrorUpd, errorUpd, isLoadingUpd, isSuccessUpd, refetchUpd } = useUpdateSettingMutation(inpValues);
-    const [updateLoanType, updateHandlers] = useUpdateSettingMutation();
+    const [updateSetting, updateHandlers] = useUpdateSettingMutation();
 
-    useEffect(() => {
-        setInputValues({
-            commisionFee: commisionFee,
-            maxLoanAmount: maxLoanAmount,
-            pledgeAmount: pledgeAmount,
-            penaltyFee: penaltyFee,
-        })
-
-    }, [commisionFee, maxLoanAmount, pledgeAmount, penaltyFee])
-
-    const handleSubmit = ({ max_pledge_amount, max_loan_amount, penalty_fee, commission_fee, }) => {
-        updateLoanType({
-            max_pledge_amount: max_pledge_amount, max_loan_amount: maxLoanAmount, penalty_fee: penaltyFee, commission_fee: commisionFee
+    const handleSubmit = () => {
+        updateSetting({
+            max_pledge_amount: pledgeAmount,
+            max_loan_amount: maxLoanAmount,
+            penalty_fee: penaltyFee,
+            commission_fee: commisionFee
         });
     }
-    console.log(updateHandlers);
     return (
         <DashboardLayout>
             <DashboardNavbar />
