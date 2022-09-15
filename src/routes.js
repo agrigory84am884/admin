@@ -60,6 +60,7 @@ import {Category, Paid, Person} from "@mui/icons-material";
 import LoanTypesTable from "./layouts/loanTypes/LoanTypesTable";
 import LoanTypesCreate from "./layouts/loanTypes/LoanTypesCreate";
 import LoanTypesUpdate from "./layouts/loanTypes/LoanTypesUpdate";
+import SettingsIndex from "layouts/settings/SettingsIndex";
 
 const sidenavRoutes = [
   {
@@ -101,6 +102,14 @@ const sidenavRoutes = [
     key: "loan-types",
     route: "/loan-types",
     icon: <Category />,
+    noCollapse: true,
+  },
+  {
+    type: "collapse",
+    name: "Settings",
+    key: "settings",
+    route: "/settings",
+    icon: <Document/>,
     noCollapse: true,
   },
   // {
@@ -198,6 +207,11 @@ const privateRoutes = [
     key: "loan-types/update",
     route: "/loan-types/update/:id",
     component: <LoanTypesUpdate/>,
+  },
+  {
+    key: "settings",
+    route: "/settings",
+    component: <SettingsIndex/>,
   }
 ];
 

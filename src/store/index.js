@@ -5,6 +5,7 @@ import {transactionApi} from "./api/transactionApi";
 import {loanTypeApi} from "./api/loanTypeApi";
 import {authApi} from "./api/authApi";
 import {authReducer} from "./reducers/authSlice";
+import { settingApi } from "./api/settingApi";
 
 
 const rootReducer = combineReducers({
@@ -12,6 +13,7 @@ const rootReducer = combineReducers({
     [transactionApi.reducerPath]: transactionApi.reducer,
     [loanTypeApi.reducerPath]: loanTypeApi.reducer,
     [authApi.reducerPath]: authApi.reducer,
+    [settingApi.reducerPath]: settingApi.reducer,
     authReducer
 });
 
