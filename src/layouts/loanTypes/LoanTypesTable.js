@@ -36,9 +36,9 @@ const columns = [
         sortable: true
     },
     {
-        name: 'Providing Percentage',
+        name: 'Loan collateral ratio',
         selector: row => row.providing_percentage,
-        dataName: 'providing_percentage',
+        dataName: 'Loan collateral ratio',
         sortable: true
     },
     {

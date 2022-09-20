@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
 
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import SoftInput from "../../../components/SoftInput";
 import SoftButton from "../../../components/SoftButton";
 import SoftAlert from "../../../components/SoftAlert";
 
-const LoanTypeForm = ({loanType, onSubmit, isLoading, isError, error, isSuccess}) => {
+const LoanTypeForm = ({ loanType, onSubmit, isLoading, isError, error, isSuccess }) => {
     const [name, setName] = useState(loanType?.name || '');
     const [monthsCount, setMonthsCount] = useState(loanType?.months_count || 0);
     const [monthlyPercentage, setMonthlyPercentage] = useState(loanType?.monthly_percentage || 0);
@@ -62,7 +62,7 @@ const LoanTypeForm = ({loanType, onSubmit, isLoading, isError, error, isSuccess}
                 />
             </label>
             <label>
-                Provided percentage
+                Loan collateral ratio
                 <SoftInput
                     placeholder="Provided percentage"
                     type="number"
